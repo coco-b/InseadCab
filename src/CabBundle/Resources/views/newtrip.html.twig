@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div id="trip">
+    <div class="container">
+        <div class="row">
+            <div class="input-field z-depth-5 offset-s4 col s4 offset-s4">
+                <input id="name" type="text" class="validate">
+                <label for="name">Trip</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field z-depth-5 offset-s4 col s4 offset-s4">
+                <input id="departure" type="text" class="validate">
+                <label for="departure">Departure</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field z-depth-5 offset-s4 col s4 offset-s4">
+                <input id="arrival" type="text" class="validate">
+                <label for="arrival">Arrival</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field z-depth-5 offset-s4 col s4 offset-s4">
+                <input type="date" class="datepicker">
+                <label for="date">Date</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field z-depth-5 offset-s4 col s4 offset-s4">
+                <input id="time" type="integer" class="validate">
+                <label for="time">Time</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field z-depth-5 offset-s4 col s4 offset-s4">
+                <input id="spots" type="text" class="validate">
+                <label for="spots">Spots</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field z-depth-5 offset-s4 col s4 offset-s4">
+                <input id="cost" type="text" class="validate">
+                <label for="cost">Cost</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-s4 col s4 offset-s4">
+                <a class="btn-floating btn-large waves-effect waves-light red z-depth-5">OK</a>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
