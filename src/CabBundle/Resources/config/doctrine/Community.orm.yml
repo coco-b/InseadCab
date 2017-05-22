@@ -1,0 +1,15 @@
+CabBundle\Entity\Community:
+    type: entity
+    table: null
+    repositoryClass: CabBundle\Repository\CommunityRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

@@ -16,9 +16,20 @@
     <body>
     <header>
         <div class="row row_header">
-            <div class="col s12 ">
+            <div class="col s6 ">
                 <img src="http://www.returnonkeycomponent.com/wp-content/uploads/2015/08/insead-logo.png"  width="250px"
                      height="150px" alt="logo-insead">
+            </div>
+            <div class="col s6 ">
+                <nav>
+                    <div class="nav-wrapper">
+                        <ul id="nav-mobile" class="right hide-on-med-and-down">
+                            <li><a href="#">Sass</a></li>
+                            <li><a href="#">Components</a></li>
+                            <li><a href="#">JavaScript</a></li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
         </div>
     </header>
@@ -28,7 +39,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.ui.min.js"></script>
-    <script src="{{ asset ('bundles/cab/js/cab.js') }}"></script>
+    <script src="{{ asset('bundles/cab/js/cab.js') }}"></script>
     {% block javascripts %}{% endblock %}
     </body>
 </html>

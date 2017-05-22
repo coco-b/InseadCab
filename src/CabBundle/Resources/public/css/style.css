@@ -41,6 +41,9 @@ header{
     background-color: white;
     margin-top: 20px;
 }
+#nav-mobile .right .hide-on-med-and-down li a{
+    color:forestgreen;
+}
 
 
 
@@ -86,6 +89,11 @@ body{
 
 #community .waves-effect .waves-purple{
     width: 200px;
+}
+
+.community {
+margin-top: 10px;
+
 }
 
 

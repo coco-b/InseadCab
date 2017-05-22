@@ -1,0 +1,29 @@
+CabBundle\Entity\Trip:
+    type: entity
+    table: null
+    repositoryClass: CabBundle\Repository\TripRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        departure:
+            type: string
+            length: 255
+        arrival:
+            type: string
+            length: 255
+        date:
+            type: datetime
+        time:
+            type: integer
+        spots:
+            type: integer
+        cost:
+            type: integer
+    lifecycleCallbacks: {  }
