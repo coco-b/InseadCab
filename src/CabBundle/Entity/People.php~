@@ -168,4 +168,3 @@ class People
         return $this->comfirmpassword;
     }
 }
-

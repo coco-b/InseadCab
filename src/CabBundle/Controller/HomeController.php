@@ -42,4 +42,9 @@ class HomeController extends Controller{
     {
         return $this->render('@Cab/newcommunity.html.twig');
     }
+
+    public function mycommunityAction()
+    {
+        return $this->render('@Cab/mycommunity.html.twig');
+    }
 }

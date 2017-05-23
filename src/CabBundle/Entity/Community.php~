@@ -52,4 +52,3 @@ class Community
         return $this->name;
     }
 }
-

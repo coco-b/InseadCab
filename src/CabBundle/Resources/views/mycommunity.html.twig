@@ -6,7 +6,7 @@
             <div class="row">
 
                 <div class="col s6">
-                    <h4>Communities</h4>
+                    <h4>My Communities</h4>
                 </div>
                 <div class="col s6">
                     <div class="input-field  col s12">
@@ -17,20 +17,17 @@
             </div>
             <!-- ligne 1-->
             <div class="row">
-                <div class="offset-s5 col s1">
-                    <a class="btn-floating btn-large waves-effect waves-light z-depth-5 red"><i class="material-icons">add</i></a>
-                </div>
+
                 <!-- Modal community -->
                 <div class=" col s6">
-                    <a class="community waves-effect waves-light btn z-depth-5 black" href="#modal2"><i class="material-icons left">supervisor_account</i>Insead</a>
+                    <a class="community waves-effect waves-light btn z-depth-5 black" href="#modal2"><i class="material-icons left">supervisor_account</i>VTT</a>
                     <!-- Modal Structure -->
                     <div id="modal2" class="modal bottom-sheet">
                         <div class="modal-content">
-
                             <!-- Modal Tip -->
                             <div class="row">
                                 <div class="col s12">
-                                    <a class="waves-effect waves-light btn" href="#modal1">Trip Orly</a>
+                                    <a class="waves-effect waves-light btn" href="#modal1">Trip week-end</a>
                                     <!-- Modal Structure -->
                                     <div id="modal1" class="modal">
                                         <div class="modal-content">
@@ -39,7 +36,7 @@
                                                 from : fontainebleau <br/>
                                                 to : Paris<br/>
                                                 spots: 3<br/>
-                                                cost: 40 €
+                                                cost: 60 €
                                             </p>
                                         </div>
                                         <div class="modal-footer">
@@ -48,7 +45,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="row">
                                 <div class="col s12">
                                     <a class="waves-effect waves-light btn" href="#modal1">Trip 2</a>
@@ -71,7 +67,7 @@
                             </div>
                             <div class="row">
                                 <div class="col s12">
-                                    <a class="waves-effect waves-light btn" href="#modal1">Trip 3</a>
+                                    <a class="waves-effect waves-light btn" href="#modal1">Trip 1</a>
                                     <!-- Modal Structure -->
                                     <div id="modal1" class="modal">
                                         <div class="modal-content">
@@ -80,7 +76,7 @@
                                                 from : fontainebleau <br/>
                                                 to : Paris<br/>
                                                 spots: 3<br/>
-                                                cost: 80 €
+                                                cost: 40 €
                                             </p>
                                         </div>
                                         <div class="modal-footer">
@@ -99,9 +95,7 @@
 
             <!-- ligne 2-->
             <div class="row">
-                <div class="offset-s5 col s1">
-                    <a class="btn-floating btn-large waves-effect waves-light z-depth-5 red"><i class="material-icons">add</i></a>
-                </div>
+
                 <!-- Modal community -->
                 <div class=" col s6">
                     <a class="community waves-effect waves-light btn z-depth-5 black" href="#modal2"><i class="material-icons left">supervisor_account</i>Family</a>
@@ -179,9 +173,7 @@
 
             <!-- ligne 3-->
             <div class="row">
-                <div class="offset-s5 col s1">
-                    <a class="btn-floating btn-large waves-effect waves-light z-depth-5 red"><i class="material-icons">add</i></a>
-                </div>
+
                 <!-- Modal community -->
                 <div class=" col s6">
                     <a class="community waves-effect waves-light btn z-depth-5 black" href="#modal2"><i class="material-icons left">supervisor_account</i>Friends</a>
@@ -250,7 +242,13 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="modal-footer">
+                            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                        </div>
                     </div>
+                </div>
+                <div class="offset-s5 col s1">
+                    <a href="{{ path ('cab_newcommunity') }}" class="btn-floating btn-large waves-effect waves-light z-depth-5 red"><i class="material-icons">add</i></a>
                 </div>
             </div>
         </div>

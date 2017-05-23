@@ -26,4 +26,10 @@ CabBundle\Entity\People:
             length: 255
             nullable: true
             unique: true
-    lifecycleCallbacks: {  }
+
+
+    manyToMany:
+            community:
+                targetEntity: testBundle\Entity\Community
+                inversedBy: people
+                cascade: ['all']

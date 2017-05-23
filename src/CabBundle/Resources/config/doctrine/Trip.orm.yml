@@ -26,4 +26,10 @@ CabBundle\Entity\Trip:
             type: integer
         cost:
             type: integer
-    lifecycleCallbacks: {  }
+
+
+    manyToOne:
+        community:
+            targetEntity: CabBundle\Entity\Community
+
+

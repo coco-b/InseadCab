@@ -12,4 +12,14 @@ CabBundle\Entity\Community:
         name:
             type: string
             length: 255
-    lifecycleCallbacks: {  }
+
+
+    manyToOne:
+        people:
+            targetEntity: CabBundle\Entity\People
+
+    manyToMany:
+            peoples:
+                targetEntity: testBundle\Entity\People
+                mappedBy: community
+                cascade: ['all']

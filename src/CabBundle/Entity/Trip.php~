@@ -226,4 +226,3 @@ class Trip
         return $this->cost;
     }
 }
-

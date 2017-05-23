@@ -14,6 +14,10 @@ cab_newcommunity:
     path:      /home/newcommunity
     defaults: { _controller: CabBundle:Home:newcommunity }
 
+cab_mycommunity:
+    path:      /home/mycommunity
+    defaults: { _controller: CabBundle:Home:mycommunity }
+
 cab_newtrip:
     path:      /home/newtrip
     defaults: { _controller: CabBundle:Home:newtrip }

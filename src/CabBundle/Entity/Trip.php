@@ -225,4 +225,33 @@ class Trip
     {
         return $this->cost;
     }
+    /**
+     * @var \CabBundle\Entity\Community
+     */
+    private $community;
+
+
+    /**
+     * Set community
+     *
+     * @param \CabBundle\Entity\Community $community
+     *
+     * @return Trip
+     */
+    public function setCommunity(\CabBundle\Entity\Community $community = null)
+    {
+        $this->community = $community;
+
+        return $this;
+    }
+
+    /**
+     * Get community
+     *
+     * @return \CabBundle\Entity\Community
+     */
+    public function getCommunity()
+    {
+        return $this->community;
+    }
 }

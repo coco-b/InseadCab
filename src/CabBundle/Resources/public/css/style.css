@@ -44,12 +44,21 @@ header{
 #nav-mobile .right .hide-on-med-and-down li a{
     color:forestgreen;
 }
+li a {
+   color: forestgreen;
+}
 
-
+/*nav{
+     background-color:white;
+ }*/
 
 body{
-    background-color: forestgreen;
+    background: url(../img/IMG_2266.PNG) no-repeat top center fixed;
+    -webkit-background-size: cover;
+    height: 100%;
+    width: 100%;
 }
+
 
 /*----------------------------------------*\
     2.HOME
