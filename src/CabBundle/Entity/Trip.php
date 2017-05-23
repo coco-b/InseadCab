@@ -7,8 +7,10 @@ namespace CabBundle\Entity;
  */
 class Trip
 {
+
+   
     /**
-     * @var int
+     * @var integer
      */
     private $id;
 
@@ -33,25 +35,30 @@ class Trip
     private $date;
 
     /**
-     * @var int
+     * @var integer
      */
     private $time;
 
     /**
-     * @var int
+     * @var integer
      */
     private $spots;
 
     /**
-     * @var int
+     * @var integer
      */
     private $cost;
+
+    /**
+     * @var \CabBundle\Entity\Community
+     */
+    private $community;
 
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -171,7 +178,7 @@ class Trip
     /**
      * Get time
      *
-     * @return int
+     * @return integer
      */
     public function getTime()
     {
@@ -195,7 +202,7 @@ class Trip
     /**
      * Get spots
      *
-     * @return int
+     * @return integer
      */
     public function getSpots()
     {
@@ -219,17 +226,12 @@ class Trip
     /**
      * Get cost
      *
-     * @return int
+     * @return integer
      */
     public function getCost()
     {
         return $this->cost;
     }
-    /**
-     * @var \CabBundle\Entity\Community
-     */
-    private $community;
-
 
     /**
      * Set community

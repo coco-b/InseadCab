@@ -30,6 +30,6 @@ CabBundle\Entity\People:
 
     manyToMany:
             community:
-                targetEntity: testBundle\Entity\Community
+                targetEntity: CabBundle\Entity\Community
                 inversedBy: people
                 cascade: ['all']

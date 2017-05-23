@@ -7,8 +7,11 @@ namespace CabBundle\Entity;
  */
 class Community
 {
+
+   
+
     /**
-     * @var int
+     * @var integer
      */
     private $id;
 
@@ -17,11 +20,23 @@ class Community
      */
     private $name;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $peoples;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->peoples = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -51,33 +66,38 @@ class Community
     {
         return $this->name;
     }
-    /**
-     * @var \CabBundle\Entity\People
-     */
-    private $people;
-
 
     /**
-     * Set people
+     * Add people
      *
      * @param \CabBundle\Entity\People $people
      *
      * @return Community
      */
-    public function setPeople(\CabBundle\Entity\People $people = null)
+    public function addPeople(\CabBundle\Entity\People $people)
     {
-        $this->people = $people;
+        $this->peoples[] = $people;
 
         return $this;
     }
 
     /**
-     * Get people
+     * Remove people
      *
-     * @return \CabBundle\Entity\People
+     * @param \CabBundle\Entity\People $people
      */
-    public function getPeople()
+    public function removePeople(\CabBundle\Entity\People $people)
     {
-        return $this->people;
+        $this->peoples->removeElement($people);
+    }
+
+    /**
+     * Get peoples
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPeoples()
+    {
+        return $this->peoples;
     }
 }

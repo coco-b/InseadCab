@@ -1,0 +1,24 @@
+people_index:
+    path:     /
+    defaults: { _controller: "CabBundle:People:index" }
+    methods:  GET
+
+people_show:
+    path:     /{id}/show
+    defaults: { _controller: "CabBundle:People:show" }
+    methods:  GET
+
+people_new:
+    path:     /new
+    defaults: { _controller: "CabBundle:People:new" }
+    methods:  [GET, POST]
+
+people_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "CabBundle:People:edit" }
+    methods:  [GET, POST]
+
+people_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "CabBundle:People:delete" }
+    methods:  DELETE

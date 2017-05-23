@@ -7,8 +7,10 @@ namespace CabBundle\Entity;
  */
 class People
 {
+
+
     /**
-     * @var int
+     * @var integer
      */
     private $id;
 
@@ -18,7 +20,7 @@ class People
     private $name;
 
     /**
-     * @var int
+     * @var integer
      */
     private $phone;
 
@@ -37,11 +39,23 @@ class People
      */
     private $comfirmpassword;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $community;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->community = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -89,7 +103,7 @@ class People
     /**
      * Get phone
      *
-     * @return int
+     * @return integer
      */
     public function getPhone()
     {
@@ -166,5 +180,39 @@ class People
     public function getComfirmpassword()
     {
         return $this->comfirmpassword;
+    }
+
+    /**
+     * Add community
+     *
+     * @param \CabBundle\Entity\Community $community
+     *
+     * @return People
+     */
+    public function addCommunity(\CabBundle\Entity\Community $community)
+    {
+        $this->community[] = $community;
+
+        return $this;
+    }
+
+    /**
+     * Remove community
+     *
+     * @param \CabBundle\Entity\Community $community
+     */
+    public function removeCommunity(\CabBundle\Entity\Community $community)
+    {
+        $this->community->removeElement($community);
+    }
+
+    /**
+     * Get community
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCommunity()
+    {
+        return $this->community;
     }
 }

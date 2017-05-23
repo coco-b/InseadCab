@@ -14,12 +14,10 @@ CabBundle\Entity\Community:
             length: 255
 
 
-    manyToOne:
-        people:
-            targetEntity: CabBundle\Entity\People
+
 
     manyToMany:
             peoples:
-                targetEntity: testBundle\Entity\People
+                targetEntity: CabBundle\Entity\People
                 mappedBy: community
                 cascade: ['all']

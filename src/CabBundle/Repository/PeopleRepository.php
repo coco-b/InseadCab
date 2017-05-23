@@ -10,4 +10,5 @@ namespace CabBundle\Repository;
  */
 class PeopleRepository extends \Doctrine\ORM\EntityRepository
 {
+
 }

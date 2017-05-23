@@ -1,0 +1,31 @@
+community_index:
+    path:     /
+    defaults: { _controller: "CabBundle:Community:index" }
+    methods:  GET
+
+community_myIndex:
+    path:  /myIndex
+    defaults: { _controller: "CabBundle:Community:myIndex"}
+
+community_show:
+    path:     /{id}/show
+    defaults: { _controller: "CabBundle:Community:show" }
+    methods:  GET
+
+community_new:
+    path:     /new
+    defaults: { _controller: "CabBundle:Community:new" }
+    methods:  [GET, POST]
+
+
+community_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "CabBundle:Community:edit" }
+    methods:  [GET, POST]
+
+community_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "CabBundle:Community:delete" }
+    methods:  DELETE
+
+

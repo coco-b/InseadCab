@@ -44,8 +44,9 @@ header{
 #nav-mobile .right .hide-on-med-and-down li a{
     color:forestgreen;
 }
-li a {
-   color: forestgreen;
+nav{
+   color: forestgreen !important;
+    background-color: blue;
 }
 
 /*nav{

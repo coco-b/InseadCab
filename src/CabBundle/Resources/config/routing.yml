@@ -1,6 +1,16 @@
-cab_home:
-    path:      /home/home
-    defaults: { _controller: CabBundle:Home:home }
+cab_community:
+    resource: "@CabBundle/Resources/config/routing/community.yml"
+    prefix:   /community
+
+cab_people:
+    resource: "@CabBundle/Resources/config/routing/people.yml"
+    prefix:   /people
+
+cab_trip:
+    resource: "@CabBundle/Resources/config/routing/trip.yml"
+    prefix:   /trip
+
+
 
 cab_people:
     path:      /home/people
@@ -26,5 +36,7 @@ cab_trip:
     path:      /home/trip
     defaults: { _controller: CabBundle:Home:trip }
 
-
+cab_home:
+    path:      /home/home
+    defaults: { _controller: CabBundle:Home:home }
 
