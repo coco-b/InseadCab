@@ -5,6 +5,7 @@ namespace CabBundle\Controller;
 use CabBundle\Entity\Community;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use CabBundle\Entity\Trip;
 
 /**
  * Community controller.
@@ -21,9 +22,11 @@ class CommunityController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $communities = $em->getRepository('CabBundle:Community')->findAll();
+        $trips = $em->getRepository('CabBundle:Trip')->findAll();
 
         return $this->render('community/index.html.twig', array(
             'communities' => $communities,
+            'trips' => $trips,
         ));
     }
 
@@ -61,7 +64,6 @@ class CommunityController extends Controller
         }
 
         return $this->render('community/new.html.twig', array(
-            'community' => $community,
             'form' => $form->createView(),
         ));
     }
@@ -137,3 +139,4 @@ class CommunityController extends Controller
         ;
     }
 }
+

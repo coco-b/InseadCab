@@ -1,16 +1,71 @@
 {% extends 'base.html.twig' %}
 
+
 {% block body %}
-    <h1>Trip creation</h1>
-
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
-
-    <ul>
-        <li>
-            <a href="{{ path('trip_index') }}">Back to the list</a>
-        </li>
-    </ul>
+    <div id="newtrip">
+        <div class="container">
+            {{ form_start(form) }}
+            <div class="row">
+                <div class="input-field z-depth-5 offset-s4 col s4 offset-s4">
+                    {{ form_label (form.name) }}
+                    {{ form_widget (form.name) }}
+                    {{ form_errors (form.name) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field z-depth-5 offset-s4 col s4 offset-s4">
+                    {{ form_label (form.departure) }}
+                    {{ form_widget (form.departure) }}
+                    {{ form_errors (form.departure) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field z-depth-5 offset-s4 col s4 offset-s4">
+                    {{ form_label (form.arrival) }}
+                    {{ form_widget (form.arrival) }}
+                    {{ form_errors (form.arrival) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field z-depth-5 offset-s4 col s4 offset-s4">
+                    {{ form_label (form.date) }}
+                    {{ form_widget (form.date) }}
+                    {{ form_errors (form.date) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field z-depth-5 offset-s4 col s4 offset-s4">
+                    {{ form_label (form.time) }}
+                    {{ form_widget (form.time) }}
+                    {{ form_errors (form.time) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field z-depth-5 offset-s4 col s4 offset-s4">
+                    {{ form_label (form.spots) }}
+                    {{ form_widget (form.spots) }}
+                    {{ form_errors (form.spots) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field z-depth-5 offset-s4 col s4 offset-s4">
+                    {{ form_label (form.cost) }}
+                    {{ form_widget (form.cost) }}
+                    {{ form_errors (form.cost) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <a href="{{ path ('cab_mycommunity') }}" class="btn-floating btn-large waves-effect waves-light z-depth-5 red"><i class="material-icons">add</i></a>
+                </div>
+            </div>
+            <input type="submit" value="Create" />
+            {{ form_end(form) }}
+            <ul>
+                <li>
+                    <a href="{{ path('trip_index') }}">Back to the list</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 {% endblock %}

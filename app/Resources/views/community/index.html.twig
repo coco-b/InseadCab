@@ -1,41 +1,69 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Communities list</h1>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
+<div id="community">
+    <div class="container">
+        <div class="row">
+            <div class="col s6">
+                <h4>Communities</h4>
+            </div>
+            <div class="col s6">
+                <div class="input-field  col s12">
+                    <input type="text" id="autocomplete-input" class="autocomplete">
+                    <label for="autocomplete-input">Search</label>
+                </div>
+            </div>
+        </div>
+        <!-- ligne 1-->
         {% for community in communities %}
+        <div class="row">
+            <div class="offset-s5 col s1">
+                <a class="btn-floating btn-large waves-effect waves-light z-depth-5 red"><i class="material-icons">add</i></a>
+            </div>
+            <!-- Modal community -->
 
-            <tr>
-                <td><a href="{{ path('community_show', { 'id': community.id }) }}">{{ community.id }}</a></td>
-                <td>{{ community.name }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('community_show', { 'id': community.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('community_edit', { 'id': community.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
+            <div class=" col s6">
+                <a class="community waves-effect waves-light btn z-depth-5 black" href="#modal2"><i class="material-icons left">supervisor_account</i>{{ community.id }}{{ community.name }}</a>
 
+                <!-- Modal Structure -->
+
+                <div id="modal2" class="modal bottom-sheet">
+                    <div class="modal-content">
+
+                        <!-- Modal Trip -->
+                        {% for trip in trips %}
+                        <div class="row">
+                            <div class="col s12">
+                                <a class="waves-effect waves-light btn" href="#modal1">{{ trip.name }}</a>
+                                <!-- Modal Structure -->
+                                <div id="modal1" class="modal">
+                                    <div class="modal-content">
+                                        <h3>{{ trip.name }}</h3>
+                                        <p> {% if trip.date %}{{ trip.date|date('Y-m-d H:i:s') }}{% endif %}<br/>
+                                            {{ trip.time }}<br/>
+                                            from : {{ trip.departure }} <br/>
+                                            to : {{ trip.arrival }}<br/>
+                                            spots: {{ trip.spots }}<br/>
+                                            cost: {{ trip.cost }}
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">OK</i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
         {% endfor %}
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('community_new') }}">Create a new community</a>
-        </li>
-    </ul>
+    </div>
+</div>
 {% endblock %}
+
+
+
+
+

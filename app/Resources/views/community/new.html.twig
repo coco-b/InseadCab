@@ -9,11 +9,12 @@
 
         <div class="row">
             <div class="input-field z-depth-5 offset-s4 col s4 offset-s4">
-                <input id="name" type="text" class="validate">
-                <label for="name">
+
+
                     {{ form_start(form) }}
                     {{ form_widget(form) }}
-                </label>
+                        <input class="btn" type="submit" value="Create" />
+                    {{ form_end(form) }}
 
             </div>
         </div>
@@ -21,9 +22,8 @@
             {#<div class="offset-s5 col s1">#}
                 {#<a href="{{ path ('cab_mycommunity') }}" class="btn-floating btn-large waves-effect waves-light z-depth-5 red">Ok</a>#}
             {#</div>#}
-            <input type="submit" value="Create" />
 
-            {{ form_end(form) }}
+
         </div>
         <div class="row">
             <div class="offset-s5 col s1">

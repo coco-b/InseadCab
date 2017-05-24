@@ -6,3 +6,12 @@ CabBundle\Entity\User:
             type: integer
             generator:
                 strategy: AUTO
+
+    fields:
+        name:
+            type: string
+            lenght: 255
+
+        phone:
+            type: string
+            lenght: 255
