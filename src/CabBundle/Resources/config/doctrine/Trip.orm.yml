@@ -20,8 +20,7 @@ CabBundle\Entity\Trip:
             length: 255
         date:
             type: datetime
-        time:
-            type: integer
+
         spots:
             type: integer
         cost:
@@ -31,5 +30,6 @@ CabBundle\Entity\Trip:
     manyToOne:
         community:
             targetEntity: CabBundle\Entity\Community
+            inversedBy: trips
 
 

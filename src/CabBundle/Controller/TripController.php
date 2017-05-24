@@ -31,7 +31,7 @@ class TripController extends Controller
      * Creates a new trip entity.
      *
      */
-    public function newAction(Request $request)
+    public function newAction($id, Request $request)
     {
         $trip = new Trip();
         $form = $this->createForm('CabBundle\Form\TripType', $trip);
@@ -39,10 +39,12 @@ class TripController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $community = $em->getRepository('CabBundle:Community')->findOneById($id);
+            $trip->setCommunity($community);
             $em->persist($trip);
             $em->flush();
 
-            return $this->redirectToRoute('trip_show', array('id' => $trip->getId()));
+            return $this->redirectToRoute('community_index', array('id' => $trip->getId()));
         }
 
         return $this->render('trip/new.html.twig', array(

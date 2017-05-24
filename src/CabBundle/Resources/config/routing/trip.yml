@@ -9,7 +9,7 @@ trip_show:
     methods:  GET
 
 trip_new:
-    path:     /new
+    path:     /{id}/new
     defaults: { _controller: "CabBundle:Trip:new" }
     methods:  [GET, POST]
 

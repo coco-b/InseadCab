@@ -13,11 +13,13 @@ CabBundle\Entity\Community:
             type: string
             length: 255
 
-
-
+    oneToMany:
+        trips:
+            targetEntity: CabBundle\Entity\Trip
+            mappedBy: community
 
     manyToMany:
             peoples:
                 targetEntity: CabBundle\Entity\People
-                mappedBy: community
+                mappedBy: communities
                 cascade: ['all']

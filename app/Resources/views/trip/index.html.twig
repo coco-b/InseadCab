@@ -11,7 +11,7 @@
                 <th>Departure</th>
                 <th>Arrival</th>
                 <th>Date</th>
-                <th>Time</th>
+
                 <th>Spots</th>
                 <th>Cost</th>
                 <th>Actions</th>
@@ -25,7 +25,7 @@
                 <td>{{ trip.departure }}</td>
                 <td>{{ trip.arrival }}</td>
                 <td>{% if trip.date %}{{ trip.date|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ trip.time }}</td>
+
                 <td>{{ trip.spots }}</td>
                 <td>{{ trip.cost }}</td>
                 <td>

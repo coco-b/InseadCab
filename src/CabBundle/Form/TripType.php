@@ -3,6 +3,7 @@
 namespace CabBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -21,11 +22,12 @@ class TripType extends AbstractType
             ->add('name', TextType::class)
             ->add('departure', TextType::class)
             ->add('arrival', TextType::class)
-            ->add('date', DateType::class)
-            ->add('time', TimeType::class)
+            ->add('date', DateType::class, array(
+                'attr' => array('class' => 'datepicker')
+                ))
             ->add('spots', IntegerType::class)
-            ->add('cost', IntegerType::class)
-            ->add('community', TextType::class);
+            ->add('cost', IntegerType::class);
+
     }
     
     /**

@@ -100,4 +100,43 @@ class Community
     {
         return $this->peoples;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $trips;
+
+
+    /**
+     * Add trip
+     *
+     * @param \CabBundle\Entity\Trip $trip
+     *
+     * @return Community
+     */
+    public function addTrip(\CabBundle\Entity\Trip $trip)
+    {
+        $this->trips[] = $trip;
+
+        return $this;
+    }
+
+    /**
+     * Remove trip
+     *
+     * @param \CabBundle\Entity\Trip $trip
+     */
+    public function removeTrip(\CabBundle\Entity\Trip $trip)
+    {
+        $this->trips->removeElement($trip);
+    }
+
+    /**
+     * Get trips
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getTrips()
+    {
+        return $this->trips;
+    }
 }

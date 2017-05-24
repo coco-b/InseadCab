@@ -29,7 +29,7 @@ CabBundle\Entity\People:
 
 
     manyToMany:
-            community:
+            communities:
                 targetEntity: CabBundle\Entity\Community
-                inversedBy: people
+                inversedBy: peoples
                 cascade: ['all']

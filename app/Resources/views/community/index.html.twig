@@ -23,24 +23,23 @@
             <!-- Modal community -->
 
             <div class=" col s6">
-                <a class="community waves-effect waves-light btn z-depth-5 black" href="#modal2"><i class="material-icons left">supervisor_account</i>{{ community.id }}{{ community.name }}</a>
+                <a class="community waves-effect waves-light btn z-depth-5 black" href="#modalCommunity{{ community.id }}"><i class="material-icons left">supervisor_account</i>{{ community.id }}{{ community.name }}</a>
 
                 <!-- Modal Structure -->
 
-                <div id="modal2" class="modal bottom-sheet">
+                <div id="modalCommunity{{ community.id }}" class="modal bottom-sheet">
                     <div class="modal-content">
 
                         <!-- Modal Trip -->
-                        {% for trip in trips %}
+                        {% for trip in community.trips %}
                         <div class="row">
                             <div class="col s12">
-                                <a class="waves-effect waves-light btn" href="#modal1">{{ trip.name }}</a>
+                                <a class="waves-effect waves-light btn" href="#modalTrip{{ trip.id }}">{{ trip.name }}</a>
                                 <!-- Modal Structure -->
-                                <div id="modal1" class="modal">
+                                <div id="modalTrip{{ trip.id }}" class="modal">
                                     <div class="modal-content">
                                         <h3>{{ trip.name }}</h3>
                                         <p> {% if trip.date %}{{ trip.date|date('Y-m-d H:i:s') }}{% endif %}<br/>
-                                            {{ trip.time }}<br/>
                                             from : {{ trip.departure }} <br/>
                                             to : {{ trip.arrival }}<br/>
                                             spots: {{ trip.spots }}<br/>
@@ -56,9 +55,8 @@
                         {% endfor %}
                         <div class="row">
                             <div class="offset-s5 col s1">
-                                <a class="btn-floating btn-large waves-effect waves-light z-depth-5 red"><i class="material-icons">add</i></a>
+                                <a href="{{ path('trip_new', {'id': community.id }) }}" class=" btn-floating btn-large waves-effect waves-light z-depth-5 red"><i class="material-icons">add</i></a>
                             </div>
-                        </div>
                         </div>
                     </div>
                 </div>

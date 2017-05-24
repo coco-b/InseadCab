@@ -37,11 +37,6 @@ class Trip
     /**
      * @var integer
      */
-    private $time;
-
-    /**
-     * @var integer
-     */
     private $spots;
 
     /**
@@ -159,30 +154,6 @@ class Trip
     public function getDate()
     {
         return $this->date;
-    }
-
-    /**
-     * Set time
-     *
-     * @param integer $time
-     *
-     * @return Trip
-     */
-    public function setTime($time)
-    {
-        $this->time = $time;
-
-        return $this;
-    }
-
-    /**
-     * Get time
-     *
-     * @return integer
-     */
-    public function getTime()
-    {
-        return $this->time;
     }
 
     /**

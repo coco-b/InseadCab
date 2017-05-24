@@ -7,8 +7,6 @@ namespace CabBundle\Entity;
  */
 class People
 {
-
-
     /**
      * @var integer
      */
@@ -42,14 +40,14 @@ class People
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
-    private $community;
+    private $communities;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->community = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->communities = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -191,7 +189,7 @@ class People
      */
     public function addCommunity(\CabBundle\Entity\Community $community)
     {
-        $this->community[] = $community;
+        $this->communities[] = $community;
 
         return $this;
     }
@@ -203,16 +201,16 @@ class People
      */
     public function removeCommunity(\CabBundle\Entity\Community $community)
     {
-        $this->community->removeElement($community);
+        $this->communities->removeElement($community);
     }
 
     /**
-     * Get community
+     * Get communities
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getCommunity()
+    public function getCommunities()
     {
-        return $this->community;
+        return $this->communities;
     }
 }
