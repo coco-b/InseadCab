@@ -22,9 +22,9 @@ class TripType extends AbstractType
             ->add('name', TextType::class)
             ->add('departure', TextType::class)
             ->add('arrival', TextType::class)
-            ->add('date', DateType::class, array(
+            ->add('date', DateTimeType::class, array(
                 'attr' => array('class' => 'datepicker')
-                ))
+            ))
             ->add('spots', IntegerType::class)
             ->add('cost', IntegerType::class);
 
