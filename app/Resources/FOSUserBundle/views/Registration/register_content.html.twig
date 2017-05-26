@@ -3,16 +3,21 @@
 
 {% block login %}
 
-    <div class="row">
-    <div class="input-field offset-s6 col s6">
-        {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
-    </div>
+    <div class="container register">
 
-    <div class="row">
-    <div class="input-field col s12">
+        <div class="row">
+            <div class="input-field col s6 offset-s6 ">
+                {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+            </div>
+        </div>
 
-    <input type="submit" value="{{ 'registration.submit'|trans }}" />
-</div>
+        <div class="row">
+            <div class="input-field col s6 offset-s6 ">
+                <a href="{{ path('community_index') }}" class="waves-effect waves-light btn">
+                    <input type="submit" value="{{ 'registration.submit'|trans }}" />
+                </a>
+            </div>
+        </div>
 {{ form_end(form) }}
-
+    </div>
 {% endblock  %}

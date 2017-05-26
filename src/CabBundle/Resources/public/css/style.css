@@ -56,10 +56,9 @@ nav{
 
  }
 
-body{
+body .base{
 
     background: url(../img/IMG_2266.PNG) no-repeat top center fixed;
-
     -webkit-background-size: cover;
     height: 100%;
     width: 100%;

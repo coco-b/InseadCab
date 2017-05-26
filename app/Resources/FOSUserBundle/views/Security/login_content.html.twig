@@ -13,26 +13,36 @@
         <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
     {% endif %}
 
+<div class="container login">
     <div class="row">
-        <div class="input-field col s12">
+        <div class="input-field col s6 offset-s6">
             <label for="username">{{ 'security.login.username'|trans }}</label>
             <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
         </div>
     </div>
 
     <div class="row">
-        <div class="input-field col s12">
+        <div class="input-field col s6 offset-s6">
             <label for="password">{{ 'security.login.password'|trans }}</label>
             <input id="password" type="password" name="_password" required="required" class="validate"/>
         </div>
     </div>
 
-
+    <div class="row">
+        <div class="input-field col s6 offset-s6">
     <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
     <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+        </div>
+    </div>
 
-
-    <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+    <div class="row">
+        <div class="input-field col s6 offset-s6">
+            <a href="{{ path('community_index') }}"class="waves-effect waves-light btn">
+            <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+            </a>
+        </div>
+    </div>
+</div>
 </form>
 {% endblock %}
 
