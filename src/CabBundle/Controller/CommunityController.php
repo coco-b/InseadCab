@@ -105,23 +105,47 @@ class CommunityController extends Controller
         ));
     }
 
+    /*
+     * delete a la mano
+     */
+
+    /*public function deleteAction($id)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        $community = $em->getRepository('Community')->findOneById($id);
+        $em->remove($community);
+        $em->flush($community);
+
+        return $this->redirectToRoute('community_index');
+    }
+*/
+
     /**
      * Deletes a community entity.
      *
      */
-    public function deleteAction(Request $request, Community $community)
+   public function deleteAction(Request $request, $id)
     {
-        $form = $this->createDeleteForm($community);
-        $form->handleRequest($request);
+        $community = $this->createDeleteForm($id);
+        $community->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($community->isSubmitted() && $community->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $community = $em->getRepository('Community')->findOneById($id);
             $em->remove($community);
             $em->flush();
-        }
 
-        return $this->redirectToRoute('community_index');
+
+        return $this->redirectToRoute('/{id}/delete', array('id' => $community->getId()));
+        }
+        return $this->render('community/index.html.twig', array(
+            'community' => $community->createView($id),
+        ));
+
     }
+
+
 
     /**
      * Creates a form to delete a community entity.
@@ -138,5 +162,6 @@ class CommunityController extends Controller
             ->getForm()
         ;
     }
+
 }
 

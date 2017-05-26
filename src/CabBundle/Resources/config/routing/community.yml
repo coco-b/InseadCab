@@ -24,8 +24,8 @@ community_edit:
     methods:  [GET, POST]
 
 community_delete:
-    path:     /{id}/delete
+    path:     /community/{id}/delete
     defaults: { _controller: "CabBundle:Community:delete" }
-    methods:  DELETE
+    methods:  [GET, POST]
 
 

@@ -20,6 +20,19 @@
             <div class="offset-s5 col s1">
                 <a class="btn-floating btn-large waves-effect waves-light z-depth-5 red"><i class="material-icons">add</i></a>
             </div>
+            <!-- delete-->
+            <div class=" col s6">
+                <form action="{{ path('/community_delete', {'id': community.id }) }}" method="post">
+                    <input type="submit"  name="_method" value="Delete">{{ render(controller('CabBundle:Community:delete',{'id':community.id})) }}
+                <button type="'submit">delete</button>
+                </form>
+
+
+            </div>
+
+
+
+
             <!-- Modal community -->
 
             <div class=" col s6">
