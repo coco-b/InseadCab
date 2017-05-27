@@ -56,13 +56,12 @@ nav{
 
  }
 
-body .base{
-
+body {
+    overflow: hidden;
     background: url(../img/IMG_2266.PNG) no-repeat top center fixed;
     -webkit-background-size: cover;
-    height: 100%;
-    width: 100%;
 }
+
 
 
 /*----------------------------------------*\
