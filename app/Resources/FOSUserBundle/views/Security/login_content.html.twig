@@ -14,12 +14,15 @@
 
 <form action="{{ path("fos_user_security_check") }}" method="post">
     {% if csrf_token %}
-        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
-    {% endif %}
+      {# <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    {% endif %}#}
 
-<div class="container login">
+    <div class="container login">
     <div class="row">
-        <div class="input-field col s6 offset-s6">
+        <div class="input-field col s6">
+            <a href="{{ path('') }}"class="waves-effect waves-light btn-large btn z-depth-5 teal darken-4 create">CREATE</a>
+        </div>
+        <div class="input-field col s6">
             <label for="username">{{ 'security.login.username'|trans }}</label>
             <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
         </div>
@@ -41,9 +44,11 @@
 
     <div class="row">
         <div class="input-field col s6 offset-s6">
-            <a href="{{ path('community_index') }}"class="waves-effect waves-light btn">
-            <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+            <a href="{{ path('community_index') }}"class="waves-effect waves-light btn z-depth-5 teal darken-4">ok
+            {#<input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />#}
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
             </a>
+            {% endif %}
         </div>
     </div>
 </div>

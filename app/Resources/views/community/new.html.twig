@@ -4,17 +4,24 @@
 
 
 {% block body %}
-<div id="newcommunity">
-    <div class="container">
 
+<div id="newcommunity">
+    <div class="parallax-container">
+        <div class="parallax"><img src="http://blog.art.com/artwiki/wp-content/uploads/2014/05/david-hockney-garrowby-hill-art-print.jpg" alt="tableau_David_Hockney"></div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col s6">
+                <h4>New community</h4>
+            </div>
+        </div>
         <div class="row">
             <div class="input-field z-depth-5 offset-s4 col s4 offset-s4">
 
 
                     {{ form_start(form) }}
                     {{ form_widget(form) }}
-                        <input class="btn" type="submit" value="Create" />
-                    {{ form_end(form) }}
+
 
             </div>
         </div>
@@ -27,9 +34,14 @@
         </div>
         <div class="row">
             <div class="offset-s5 col s1">
-                <a href="{{ path ('community_index') }}" class="btn-floating btn-large waves-effect waves-light z-depth-5 red"><i class="material-icons">add</i></a>
+                <input class="btn z-depth-5 teal darken-4" type="submit" value="Create" />
+                {{ form_end(form) }}
+                {#<a href="{{ path ('community_index') }}" class="btn-floating btn-large waves-effect waves-light z-depth-5 red"><i class="material-icons">add</i></a>#}
             </div>
         </div>
+    </div>
+    <div class="parallax-container">
+        <div class="parallax"><img src="http://blog.art.com/artwiki/wp-content/uploads/2014/05/david-hockney-garrowby-hill-art-print.jpg" alt="tableau_David_Hockney"></div>
     </div>
 </div>
 {% endblock %}
