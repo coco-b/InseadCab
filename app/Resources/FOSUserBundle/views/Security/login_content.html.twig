@@ -3,8 +3,12 @@
 {% extends 'base.html.twig' %}
 
 {% block login %}
+    <div class="parallax-container">
+        <div class="parallax"><img src="http://blog.art.com/artwiki/wp-content/uploads/2014/05/david-hockney-garrowby-hill-art-print.jpg" alt="tableau_David_Hockney"></div>
+    </div>
 
-{% if error %}
+
+    {% if error %}
     <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 {% endif %}
 
@@ -44,6 +48,10 @@
     </div>
 </div>
 </form>
+    <div class="parallax-container">
+        <div class="parallax"><img src="http://blog.art.com/artwiki/wp-content/uploads/2014/05/david-hockney-garrowby-hill-art-print.jpg" alt="tableau_David_Hockney"></div>
+    </div>
+
 {% endblock %}
 
 
