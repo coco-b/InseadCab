@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Vidaloka');
+
 /*----------------------------------------*\
     1.HEADER
 \*----------------------------------------*/
@@ -41,7 +43,7 @@ header{
     margin-top: 20px;
 }
 #nav-mobile .right .hide-on-med-and-down li a{
-    color:forestgreen;
+    color:#004d40;
 }
 nav li a{
    color: forestgreen !important;
@@ -56,10 +58,9 @@ nav{
 
  }
 
-body {
-    overflow: hidden;
-    background: url(../img/IMG_2266.PNG) no-repeat top center fixed;
-    -webkit-background-size: cover;
+h1 {
+    color: #004d40;
+    font-family: 'Vidaloka', serif;
 }
 
 
@@ -99,14 +100,20 @@ body {
     4.COMMUNITY
 \*----------------------------------------*/
 
+.container {
+    border:2px solid #004d40;
+}
 
 #community .waves-effect .waves-purple{
     width: 200px;
 }
 
 .community {
-margin-top: 10px;
-
+    margin-top: 10px;
+}
+#community h4{
+    color:#004d40;
+    font-family: 'Vidaloka', serif;
 }
 
 

@@ -1,6 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<div class="parallax-container">
+    <div class="parallax"><img src="http://blog.art.com/artwiki/wp-content/uploads/2014/05/david-hockney-garrowby-hill-art-print.jpg"></div>
+</div>
 <div id="community">
     <div class="container">
         <div class="row">
@@ -23,7 +26,7 @@
             <!-- Modal community -->
 
             <div class=" col s6">
-                <a class="community waves-effect waves-light btn z-depth-5 black" href="#modalCommunity{{ community.id }}"><i class="material-icons left">supervisor_account</i>{{ community.id }}{{ community.name }}</a>
+                <a class="community waves-effect waves-light btn z-depth-5 teal darken-4" href="#modalCommunity{{ community.id }}"><i class="material-icons left">supervisor_account</i>{{ community.id }}{{ community.name }}</a>
 
                 <!-- Modal Structure -->
 
@@ -64,6 +67,9 @@
         </div>
         {% endfor %}
     </div>
+</div>
+<div class="parallax-container">
+    <div class="parallax"><img src="http://blog.art.com/artwiki/wp-content/uploads/2014/05/david-hockney-garrowby-hill-art-print.jpg"></div>
 </div>
 {% endblock %}
 
