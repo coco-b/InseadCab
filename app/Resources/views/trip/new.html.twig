@@ -9,13 +9,13 @@
         <div class="container">
             <div class="row">
                 <div class="col s6">
-                    <h4>New Trip</h4>
+                    <h4>New trip</h4>
                 </div>
             </div>
             {{ form_start(form) }}
             <div class="row">
                 <div class="col s12">
-                    <a href="{{ path ('community_index') }}" class="btn-floating btn-large waves-effect waves-light z-depth-5 red"><i class="material-icons">add</i></a>
+
                 </div>
             </div>
             <div class="row">
@@ -60,26 +60,27 @@
                     {{ form_errors (form.cost) }}
                 </div>
             </div>
-            <div class="row">
-                <div class="col s12">
-                    <a href="{{ path ('cab_mycommunity') }}" class="btn-floating btn-large waves-effect waves-light z-depth-5 red"><i class="material-icons">add</i></a>
-                </div>
-            </div>
             <div>
-                <input type="submit" value="Create" />
-                {{ form_end(form) }}
-                <ul>
-                    <li>
-                        <a href="{{ path('trip_index') }}">Back to the list</a>
-                    </li>
-                </ul>
-            </div>
+                <div class="row">
+                    <div class="offset-s5 col s1">
+                        <a href="{{ path ('community_myIndex') }}">
+                            <input class="btn z-depth-5 teal darken-4" type="submit" value="Create" />
+                        </a>
+                        {{ form_end(form) }}
+                        {#<ul>
+                            <li>
+                                <a href="{{ path('trip_index') }}">Back to the list</a>
+                            </li>
+                        </ul>#}
+                    </div>
+                </div>
         </div>
         <div class="parallax-container">
             <div class="parallax"><img src="http://blog.art.com/artwiki/wp-content/uploads/2014/05/david-hockney-garrowby-hill-art-print.jpg" alt="tableau_David_Hockney"></div>
         </div>
     </div>
 {% endblock %}
+
 {% block javascripts %}
     <script>
         $('.datepicker').pickadate({

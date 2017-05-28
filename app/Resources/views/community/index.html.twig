@@ -25,7 +25,7 @@
         {% for community in communities %}
         <div class="row">
             <div class="offset-s5 col s1">
-                <a class="btn-floating btn-large waves-effect waves-light z-depth-5 red"><i class="material-icons">add</i></a>
+                <a href="{{ path('{id}/community_myIndex', {'id': community.id }) }}" class="btn-floating btn-large waves-effect waves-light z-depth-5 red"><i class="material-icons">add</i></a>
             </div>
             <!-- Modal community -->
 
@@ -67,11 +67,11 @@
                             </div>
                         </div>
                         {% endfor %}
-                        <div class="row">
+                        {#<div class="row">
                             <div class="offset-s5 col s1">
                                 <a href="{{ path('trip_new', {'id': community.id }) }}" class=" btn-floating btn-large waves-effect waves-light z-depth-5 red"><i class="material-icons">add</i></a>
                             </div>
-                        </div>
+                        </div>#}
                     </div>
                 </div>
             </div>
