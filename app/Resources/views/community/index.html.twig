@@ -73,7 +73,7 @@
                 </div>
             </div>
             <div class="col s4">
-                <a href="{{ path ('community_myIndex') }}" class="btn-floating btn-large waves-effect waves-light z-depth-5 teal darken-4 new">delete</a>
+                <a href="{{ path ('community_delete', {'id' : community.id }) }}" class="btn-floating btn-large waves-effect waves-light z-depth-5 teal darken-4 new">delete</a>
             </div>
         </div>
         {% endfor %}
