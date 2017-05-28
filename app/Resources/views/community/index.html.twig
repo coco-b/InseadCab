@@ -11,9 +11,6 @@
                 <h4>Communities</h4>
                 <a href="{{ path('community_new') }}"class="waves-effect waves-light btn-large btn z-depth-5 teal darken-4 new">NEW COMMUNITY</a>
             </div>
-
-
-
             <div class="col s6">
                 <div class="input-field  col s12">
                     <input type="text" id="autocomplete-input" class="autocomplete">
@@ -24,12 +21,12 @@
         <!-- ligne 1-->
         {% for community in communities %}
         <div class="row">
-            <div class="offset-s5 col s1">
-                {#<a href="{{ path('{id}/community_myIndex', {'id': community.id }) }}" class="btn-floating btn-large waves-effect waves-light z-depth-5 red"><i class="material-icons">add</i></a>#}
+            <div class="col s4">
+                <a href="{{ path ('community_myIndex') }}" class="btn-floating btn-large waves-effect waves-light z-depth-5 red"><i class="material-icons">add</i></a>
             </div>
             <!-- Modal community -->
 
-            <div class=" col s6">
+            <div class=" col s4">
                 <a class="community waves-effect waves-light btn z-depth-5 teal darken-4" href="#modalCommunity{{ community.id }}"><i class="material-icons left">supervisor_account</i>{{ community.id }}{{ community.name }}</a>
 
                 <!-- Modal Structure -->
@@ -74,6 +71,9 @@
                         </div>#}
                     </div>
                 </div>
+            </div>
+            <div class="col s4">
+                <a href="{{ path ('community_myIndex') }}" class="btn-floating btn-large waves-effect waves-light z-depth-5 teal darken-4 new">delete</a>
             </div>
         </div>
         {% endfor %}
