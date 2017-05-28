@@ -6,6 +6,7 @@ use CabBundle\Entity\Community;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use CabBundle\Entity\Trip;
+use Symfony\Component\Translation\Exception\NotFoundResourceException;
 
 /**
  * Community controller.
@@ -34,11 +35,16 @@ class CommunityController extends Controller
      * Lists all community entities.
      *
      */
-    public function myIndexAction()
+    public function myIndexAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $communities = $em->getRepository('CabBundle:Community')->findAll();
+        $communities = $em->getRepository('CabBundle:Community')->find($id);
+
+        if(null === $communities)
+        {
+            throw new NotFoundResourceException("community d'id" .$id. "n'existe pas.");
+        }
 
         return $this->render('community/myIndex.html.twig', array(
             'communities' => $communities,
