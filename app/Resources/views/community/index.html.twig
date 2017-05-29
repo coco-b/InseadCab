@@ -28,9 +28,13 @@
                 {#<a href="{{ path('{id}/community_myIndex', {'id': community.id }) }}" class="btn-floating btn-large waves-effect waves-light z-depth-5 red"><i class="material-icons">add</i></a>#}
                 <a href="{{ path('community_myIndex')}}" class="btn-floating btn-large waves-effect waves-light z-depth-5 red"><i class="material-icons">add</i></a>
             </div>
+            <!-- delete-->
+            <div class=" col s1">
+                <a href="{{ path ('community_myIndex') }}" class="btn-floating btn-large waves-effect waves-light z-depth-5 teal darken-4 new">delete</a>
+            </div>
             <!-- Modal community -->
 
-            <div class=" col s6">
+            <div class=" col s5 ">
                 <a class="community waves-effect waves-light btn z-depth-5 teal darken-4" href="#modalCommunity{{ community.id }}"><i class="material-icons left">supervisor_account</i>{{ community.id }}{{ community.name }}</a>
 
                 <!-- Modal Structure -->
