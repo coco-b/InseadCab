@@ -112,9 +112,10 @@ class CommunityController extends Controller
     public function deleteAction($id)
     {
        $em = $this->getDoctrine()->getManager();
-       $community = $em->getRepository('CabBundle:Community')->FindOneBy(array('id' => $community));
+       $community = $em->getRepository('CabBundle\Entity\Community')->findOneById($id);
 
             $em->remove($community);
+
             $em->flush();
 
 
