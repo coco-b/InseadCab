@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <div id="newtrip">
+        <div class="parallax-container">
+            <div class="parallax"><img src="http://blog.art.com/artwiki/wp-content/uploads/2014/05/david-hockney-garrowby-hill-art-print.jpg" alt="tableau_David_Hockney"></div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col s6">
+                    <h4>New trip</h4>
+                </div>
+            </div>
+            {{ form_start(form) }}
+            <div class="row">
+                <div class="col s12">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field offset-s4 col s4 offset-s4">
+                    {{ form_label (form.name) }}
+                    {{ form_widget (form.name) }}
+                    {{ form_errors (form.name) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field offset-s4 col s4 offset-s4">
+                    {{ form_label (form.departure) }}
+                    {{ form_widget (form.departure) }}
+                    {{ form_errors (form.departure) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field offset-s4 col s4 offset-s4">
+                    {{ form_label (form.arrival) }}
+                    {{ form_widget (form.arrival) }}
+                    {{ form_errors (form.arrival) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class=" offset-s4 col s4 offset-s4">
+                    {{ form_label (form.date) }}
+                    {{ form_widget (form.date) }}
+                    {{ form_errors (form.date) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field offset-s4 col s4 offset-s4">
+                    {{ form_label (form.spots) }}
+                    {{ form_widget (form.spots) }}
+                    {{ form_errors (form.spots) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field offset-s4 col s4 offset-s4">
+                    {{ form_label (form.cost) }}
+                    {{ form_widget (form.cost) }}
+                    {{ form_errors (form.cost) }}
+                </div>
+            </div>
+            <div>
+                <div class="row">
+                    <div class="offset-s5 col s1">
+                        <a href="{{ path ('community_myIndex') }}">
+                            <input class="btn z-depth-5 teal darken-4" type="submit" value="Create" />
+                        </a>
+                        {{ form_end(form) }}
+                        {#<ul>
+                            <li>
+                                <a href="{{ path('trip_index') }}">Back to the list</a>
+                            </li>
+                        </ul>#}
+                    </div>
+                </div>
+        </div>
+        <div class="parallax-container">
+            <div class="parallax"><img src="http://blog.art.com/artwiki/wp-content/uploads/2014/05/david-hockney-garrowby-hill-art-print.jpg" alt="tableau_David_Hockney"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        $('.datepicker').pickadate({
+            selectMonths: true,
+            selectYears: 15 });
+    </script>
+{% endblock %}

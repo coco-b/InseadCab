@@ -1,0 +1,26 @@
+CabBundle\Entity\Community:
+    type: entity
+    table: null
+    repositoryClass: CabBundle\Repository\CommunityRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+
+    oneToMany:
+        trips:
+            targetEntity: CabBundle\Entity\Trip
+            mappedBy: community
+            cascade: ['remove']
+
+    manyToMany:
+            peoples:
+                targetEntity: CabBundle\Entity\People
+                mappedBy: communities
+                cascade: ['remove']

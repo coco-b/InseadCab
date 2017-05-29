@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="newcommunity">
+        <div class="container">
+            <div class="row">
+                <div class="input-field z-depth-5 offset-s4 col s4 offset-s4">
+                    <input id="name" type="text" class="validate">
+                    <label for="name"> New Community</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="offset-s5 col s1">
+                    <a href="{{ path ('cab_mycommunity') }}" class="btn-floating btn-large waves-effect waves-light z-depth-5 red">OK</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="offset-s5 col s1">
+                    <a href="{{ path ('cab_newcommunity') }}" class="btn-floating btn-large waves-effect waves-light z-depth-5 red"><i class="material-icons">add</i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

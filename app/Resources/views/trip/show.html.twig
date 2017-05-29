@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Trip</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ trip.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ trip.name }}</td>
+            </tr>
+            <tr>
+                <th>Departure</th>
+                <td>{{ trip.departure }}</td>
+            </tr>
+            <tr>
+                <th>Arrival</th>
+                <td>{{ trip.arrival }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{% if trip.date %}{{ trip.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Time</th>
+
+            </tr>
+            <tr>
+                <th>Spots</th>
+                <td>{{ trip.spots }}</td>
+            </tr>
+            <tr>
+                <th>Cost</th>
+                <td>{{ trip.cost }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('trip_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('trip_edit', { 'id': trip.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,35 @@
+CabBundle\Entity\People:
+    type: entity
+    table: null
+    repositoryClass: CabBundle\Repository\PeopleRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        phone:
+            type: integer
+        email:
+            type: string
+            length: 255
+        password:
+            type: string
+            length: 255
+            unique: true
+        comfirmpassword:
+            type: string
+            length: 255
+            nullable: true
+            unique: true
+
+
+    manyToMany:
+        communities:
+            targetEntity: CabBundle\Entity\Community
+            inversedBy: peoples
+            cascade: ['remove']

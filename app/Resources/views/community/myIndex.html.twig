@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <div class="parallax-container">
+        <div class="parallax"><img src="http://blog.art.com/artwiki/wp-content/uploads/2014/05/david-hockney-garrowby-hill-art-print.jpg" alt="tableau_David_Hockney"></div>
+    </div>
+    <div id="community">
+        <div class="container">
+            <!-- ligne 1-->
+            <div class="row">
+                <div class="col s6">
+                    <h4>My Communities</h4>
+                    <a href="{{ path('community_new') }}"class="waves-effect waves-light btn-large btn z-depth-5 teal darken-4 new">NEW COMMUNITY</a>
+                </div>
+                <div class="col s6">
+                    <div class="input-field  col s12">
+                        <input type="text" id="autocomplete-input" class="autocomplete">
+                        <label for="autocomplete-input">Search</label>
+                    </div>
+                </div>
+            </div>
+            <!-- ligne 1 end-->
+            <!-- ligne 2-->
+            {% for community in communities %}
+                {% if app.user == community.name %}
+            <div class="row">
+                <!-- Modal community -->
+                <div class=" col s6">
+                    <a class="community waves-effect waves-light btn z-depth-5 black" href="#modalCommunity{{ path('community_show', { 'id': community.id }) }}"><i class="material-icons left">supervisor_account</i>{{ community.name }}</a>
+                    <!-- Modal Structure -->
+                    <div id="modalCommunity" class="modal bottom-sheet">
+                        <div class="modal-content">
+                            <!-- Modal Tip -->
+                            {% for trip in community.trips %}
+                            <div class="row">
+                                <div class="col s12">
+                                    <a class="waves-effect waves-light btn" href="#modalTrip{{ trip.id }}">{{ trip.name }}</a>
+                                    <!-- Modal Structure -->
+                                    <div id="modalTrip" class="modal">
+                                        <div class="modal-content">
+                                            <h3>{{ trip.name }}</h3>
+                                            <p> {% if trip.date %}{{ trip.date|date('Y-m-d H:i:s') }}{% endif %}<br/>
+                                                from : {{ trip.departure }} <br/>
+                                                to : {{ trip.arrival }}<br/>
+                                                spots: {{ trip.spots }}<br/>
+                                                cost: {{ trip.cost }}
+                                            </p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a class="btn-floating btn-large waves-effect waves-light red">delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                             {% endfor %}
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal community end-->
+            </div>
+                {% endif %}
+                {% endfor %}
+            <!-- ligne 2 end-->
+            <div class="row">
+                <div class="offset-s5 col s1">
+                    <a href="{{ path ('community_myIndex') }}" class="btn-floating btn-large waves-effect waves-light z-depth-5 teal darken-4 new">delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="parallax-container">
+        <div class="parallax"><img src="http://blog.art.com/artwiki/wp-content/uploads/2014/05/david-hockney-garrowby-hill-art-print.jpg" alt="tableau_David_Hockney"></div>
+    </div>
+{% endblock %}

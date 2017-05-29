@@ -1,0 +1,27 @@
+{% trans_default_domain 'FOSUserBundle' %}
+{% extends 'base.html.twig' %}
+
+{% block login %}
+    <div class="parallax-container">
+        <div class="parallax"><img src="http://blog.art.com/artwiki/wp-content/uploads/2014/05/david-hockney-garrowby-hill-art-print.jpg" alt="tableau_David_Hockney"></div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="input-field col s6 offset-s6 register">
+                {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s6 offset-s6 register">
+                <a href="{{ path('community_index') }}" class="waves-effect waves-light btn z-depth-5 teal darken-4">
+                    <input id="register" type="submit" value="{{ 'registration.submit'|trans }}" />
+                </a>
+            </div>
+        </div>
+{{ form_end(form) }}
+    </div>
+    <div class="parallax-container">
+        <div class="parallax"><img src="http://blog.art.com/artwiki/wp-content/uploads/2014/05/david-hockney-garrowby-hill-art-print.jpg" alt="tableau_David_Hockney"></div>
+    </div>
+{% endblock  %}

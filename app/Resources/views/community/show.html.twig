@@ -1,0 +1,114 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div id="community">
+    <div class="container">
+        <div class="row">
+
+            <div class="col s6">
+                <h4>Communities</h4>
+            </div>
+            <div class="col s6">
+                <div class="input-field  col s12">
+                    <input type="text" id="autocomplete-input" class="autocomplete">
+                    <label for="autocomplete-input">Search</label>
+                </div>
+            </div>
+        </div>
+        <!-- ligne 1-->
+        <div class="row">
+            <div class="offset-s5 col s1">
+                <a class="btn-floating btn-large waves-effect waves-light z-depth-5 red"><i class="material-icons">add</i></a>
+            </div>
+            <!-- Modal community -->
+            <div class=" col s6">
+                <a class="community waves-effect waves-light btn z-depth-5 black" href="#modal2"><i class="material-icons left">supervisor_account</i>{{ community.id }}{{ community.name }}</a>
+                <!-- Modal Structure -->
+                <div id="modal2" class="modal bottom-sheet">
+                    <div class="modal-content">
+
+                        <!-- Modal Trip -->
+
+                        <div class="row">
+                            <div class="col s12">
+                                <a class="waves-effect waves-light btn" href="#modal1">Orly</a>
+                                <!-- Modal Structure -->
+                                <div id="modal1" class="modal">
+                                    <div class="modal-content">
+                                        <h3>Trip 1</h3>
+                                        <p> 30/05<br/>
+                                            from : fontainebleau <br/>
+                                            to : Paris<br/>
+                                            spots: 3<br/>
+                                            cost: 40 €
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">OK</i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s12">
+                                <a class="waves-effect waves-light btn" href="#modal1">Trip 2</a>
+                                <!-- Modal Structure -->
+                                <div id="modal1" class="modal">
+                                    <div class="modal-content">
+                                        <h3>Trip 1</h3>
+                                        <p> 30/05<br/>
+                                            from : fontainebleau <br/>
+                                            to : Paris<br/>
+                                            spots: 3<br/>
+                                            cost: 40 €
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">OK</i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <a class="waves-effect waves-light btn" href="#modal1">Trip 3</a>
+                                <!-- Modal Structure -->
+                                <div id="modal1" class="modal">
+                                    <div class="modal-content">
+                                        <h3>Trip 1</h3>
+                                        <p> 30/05<br/>
+                                            from : fontainebleau <br/>
+                                            to : Paris<br/>
+                                            spots: 3<br/>
+                                            cost: 80 €
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">OK</i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                <ul>
+                    <li>
+                        <a href="{{ path('community_index') }}">Back to the list</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('community_edit', { 'id': community.id }) }}">Edit</a>
+                    </li>
+                    <li>
+                        {{ form_start(delete_form) }}
+                        <input type="submit" value="Delete">
+                        {{ form_end(delete_form) }}
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
