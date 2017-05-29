@@ -109,16 +109,15 @@ class CommunityController extends Controller
      * Deletes a community entity.
      *
      */
-    public function deleteAction(Request $request, Community $community)
+    public function deleteAction($id)
     {
-        $form = $this->createDeleteForm($community);
-        $form->handleRequest($request);
+       $em = $this->getDoctrine()->getManager();
+       $community = $em->getRepository('CabBundle\Entity\Community')->findOneById($id);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
             $em->remove($community);
+
             $em->flush();
-        }
+
 
         return $this->redirectToRoute('community_index');
     }
@@ -130,13 +129,13 @@ class CommunityController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(Community $community)
+    /*private function createDeleteForm(Community $community)
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('community_delete', array('id' => $community->getId())))
             ->setMethod('DELETE')
             ->getForm()
         ;
-    }
+    }*/
 }
 

@@ -17,9 +17,10 @@ CabBundle\Entity\Community:
         trips:
             targetEntity: CabBundle\Entity\Trip
             mappedBy: community
+            cascade: ['remove']
 
     manyToMany:
             peoples:
                 targetEntity: CabBundle\Entity\People
                 mappedBy: communities
-                cascade: ['all']
+                cascade: ['remove']

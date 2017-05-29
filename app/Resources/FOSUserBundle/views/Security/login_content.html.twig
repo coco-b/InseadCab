@@ -18,11 +18,22 @@
     {% endif %}#}
 
     <div class="container login">
-    <div class="row">
-        <div class="input-field col s6">
-            <a href="{{ path('') }}"class="waves-effect waves-light btn-large btn z-depth-5 teal darken-4 create">CREATE</a>
-        </div>
-        <div class="input-field col s6">
+
+
+
+
+        <div class="row">
+             <div class="input-field col s6">
+                 <a href="{{ path('fos_user_registration_register') }}"class="waves-effect waves-light btn-large btn z-depth-5 teal darken-4 create">SING UP</a>
+             </div>
+
+
+
+
+
+
+
+        <div class="input-field col s6 offset-s6">
             <label for="username">{{ 'security.login.username'|trans }}</label>
             <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
         </div>
