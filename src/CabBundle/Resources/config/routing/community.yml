@@ -26,6 +26,5 @@ community_edit:
 community_delete:
     path:     /{id}/delete
     defaults: { _controller: "CabBundle:Community:delete" }
-    methods:  DELETE
 
 
