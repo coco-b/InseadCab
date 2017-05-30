@@ -5,7 +5,7 @@ community_home:
 
 
 community_index:
-    path:     /
+    path:     /index
     defaults: { _controller: "CabBundle:Community:index" }
     methods:  GET
 
