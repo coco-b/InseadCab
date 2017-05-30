@@ -1,7 +1,15 @@
+community_home:
+    path:  /
+    defaults: { _controller: "CabBundle:Community:home"}
+    methods:  GET
+
+
 community_index:
     path:     /
     defaults: { _controller: "CabBundle:Community:index" }
     methods:  GET
+
+
 
 community_myIndex:
     path:  /myIndex

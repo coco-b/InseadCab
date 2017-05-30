@@ -6,6 +6,7 @@ use CabBundle\Entity\Community;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use CabBundle\Entity\Trip;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Community controller.
@@ -13,10 +14,16 @@ use CabBundle\Entity\Trip;
  */
 class CommunityController extends Controller
 {
+    public function homeAction(){
+        $home = $this->get('templating')->render(':community:home.html.twig');
+
+        return new Response($home);
+    }
     /**
      * Lists all community entities.
      *
      */
+
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
