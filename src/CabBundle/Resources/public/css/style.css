@@ -45,19 +45,28 @@ header{
     background-color: white;
     margin-top: 20px;
 }
+
+.row_burger{
+    margin-top: -40px;
+}
+
+
+
+
 #nav-mobile .right .hide-on-med-and-down li a{
     color:#004d40;
 }
 nav li a{
    color: forestgreen !important;
+}
 
+.burger{
+    color: forestgreen !important;
 }
 
 nav{
     background-color:white;
     box-shadow: none;
-    margin-top:135px;
-    margin-left:50px;
 
  }
 
@@ -158,3 +167,9 @@ h1 {
     color: #004d40;
     font-family: 'Vidaloka', serif;
 }
+
+
+
+
+
+
