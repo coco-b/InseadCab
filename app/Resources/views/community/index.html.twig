@@ -12,15 +12,13 @@
                 <h4>Communities</h4>
                 <a href="{{ path('community_new') }}"class="waves-effect waves-light btn-large btn z-depth-5 teal darken-4 new">NEW COMMUNITY</a>
             </div>
-
-
-
             <div class="col s6">
                 <div class="input-field  col s12">
                     <input type="text" id="autocomplete-input" class="autocomplete">
                     <label for="autocomplete-input">Search</label>
                 </div>
             </div>
+
         </div>
         <!-- ligne 1-->
         {% for community in communities %}
@@ -31,7 +29,7 @@
             </div>
             <!-- delete-->
             <div class=" col s2 m4">
-                <a href="{{ path ('community_delete',{'id': community.id}) }}" class="btn-floating btn-large waves-effect waves-light z-depth-5 teal darken-4 new">delete</a>
+                <a href="{{ path ('community_delete',{'id': community.id}) }}" class="delete btn-large waves-effect waves-light z-depth-5  grey darken-1 center-align">delete</a>
             </div>
             <!-- Modal community -->
 
@@ -84,10 +82,12 @@
         </div>
         {% endfor %}
     </div>
-    <div class="parallax-container parallax-custom">
-        <div class="parallax"><img src="http://blog.art.com/artwiki/wp-content/uploads/2014/05/david-hockney-garrowby-hill-art-print.jpg" alt="tableau_David_Hockney"></div>
     </div>
-</div>
+
+        <div class="parallax-container parallax-custom">
+            <div class="parallax"><img src="http://blog.art.com/artwiki/wp-content/uploads/2014/05/david-hockney-garrowby-hill-art-print.jpg" alt="tableau_David_Hockney"></div>
+        </div>
+
 
 {% endblock %}
 
