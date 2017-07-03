@@ -129,20 +129,6 @@ class CommunityController extends Controller
         return $this->redirectToRoute('community_index');
     }
 
-    /**
-     * Creates a form to delete a community entity.
-     *
-     * @param Community $community The community entity
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    /*private function createDeleteForm(Community $community)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('community_delete', array('id' => $community->getId())))
-            ->setMethod('DELETE')
-            ->getForm()
-        ;
-    }*/
+
 }
 
